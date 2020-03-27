@@ -1,0 +1,16 @@
+{
+    "name": "tab-title-setter",
+    "version": "0.1",
+    "description": "set tab titles",
+    "manifest_version": 2,
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
