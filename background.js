@@ -10,9 +10,19 @@ const changeTitle = (tab, value) => {
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     let { message, activeTab, value } = request;
-
-    if (message === "set_title" && activeTab && value)
-        changeTitle(activeTab, value);
+    let { id } = activeTab;
+    switch (message) {
+        case ("set_title"):
+            if (activeTab && value)
+                changeTitle(activeTab, value);
+            break;
+        case ("reset_title"):
+            if (titles[id]) {
+                delete titles[id];
+                chrome.tabs.sendMessage(id, { message: "reset_title" });
+            }
+            break;
+    }
 
 });
 

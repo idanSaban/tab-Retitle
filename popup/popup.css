@@ -1,5 +1,29 @@
 #container {
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: "3fr 1fr";
+  grid-template-columns: 250px 50px 50px;
+  box-shadow: 2px 1px 2px rgb(109, 109, 109);
+}
+
+.popup-item {
+  padding: 4px;
+  border: 1px solid #303232;
+}
+
+.popup-button {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  border-left: none;
+  background-color: #727578;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.popup-button:active {
+  background-color: #939495;
+}
+
+input:focus {
+  outline: none;
 }
