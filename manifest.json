@@ -3,6 +3,12 @@
     "version": "0.1",
     "description": "set tab titles",
     "manifest_version": 2,
+    "permissions": [
+        "tabs"
+    ],
+    "browser_action": {
+        "default_popup": "./popup/popup.html"
+    },
     "content_scripts": [
         {
             "matches": [
@@ -12,5 +18,10 @@
                 "content.js"
             ]
         }
-    ]
+    ],
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    }
 }

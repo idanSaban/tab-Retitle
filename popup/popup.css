@@ -1,0 +1,5 @@
+#container {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: "3fr 1fr";
+}
