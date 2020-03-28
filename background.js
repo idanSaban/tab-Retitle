@@ -23,7 +23,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             }
             break;
     }
-
 });
 
 chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
@@ -34,4 +33,8 @@ chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
     changeTitle(tab, value);
 });
 
-
+chrome.contextMenus.create({
+    title: "Set as tab title",
+    contexts: ["selection"],
+    onclick: (info, tab) => changeTitle(tab, info.selectionText)
+});

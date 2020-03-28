@@ -4,6 +4,7 @@
     "description": "set tab titles",
     "manifest_version": 2,
     "permissions": [
+        "contextMenus",
         "tabs"
     ],
     "browser_action": {
